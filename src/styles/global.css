@@ -7,14 +7,20 @@
   --font-body: "DM Sans", sans-serif;
 
   /* Brand greens */
-  --color-brand-50: #f0fdf4;
-  --color-brand-100: #dcfce7;
-  --color-brand-200: #bbf7d0;
-  --color-brand-400: #4ade80;
-  --color-brand-500: #22c55e;
-  --color-brand-600: #16a34a;
-  --color-brand-700: #15803d;
-  --color-brand-900: #14532d;
+  --color-brand-50: #F3F1FB;
+  --color-brand-100: #E4E0F6;
+  --color-brand-200: #C9C2ED;
+  --color-brand-300: #A89DE0;
+  --color-brand-400: #7D6FD1;
+  --color-brand-500: #5C4DBA;
+  --color-brand-600: #41368A;
+  --color-brand-700: #332A6D;
+  --color-brand-900: #251F50;
+
+  
+  --color-accent-400: #F0985E;
+  --color-accent-500: #E87E3C;
+  --color-accent-600: #D96A2A;
 
   /* Ink / surface */
   --color-ink: #0b0f0d;
