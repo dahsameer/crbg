@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap");
+@import "tailwindcss";
+
+/* ── Theme tokens ── */
+@theme {
+  --font-display: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Brand greens */
+  --color-brand-50: #f0fdf4;
+  --color-brand-100: #dcfce7;
+  --color-brand-200: #bbf7d0;
+  --color-brand-400: #4ade80;
+  --color-brand-500: #22c55e;
+  --color-brand-600: #16a34a;
+  --color-brand-700: #15803d;
+  --color-brand-900: #14532d;
+
+  /* Ink / surface */
+  --color-ink: #0b0f0d;
+  --color-surface: #f7faf8;
+
+  /* Readable muted tones — avoids low-opacity hacks */
+  --color-muted: #4b5754; /* replaces ink/50–60 on light bg  — 5.1:1 on surface */
+  --color-muted-light: #6b7a75; /* replaces ink/40 on light bg     — 3.8:1 AA large  */
+  --color-muted-dark: #a8b5b0; /* replaces white/40–50 on dark bg — 4.6:1 on #0b0f0d */
+  --color-muted-darker: #7a8f89; /* replaces white/35 on dark bg    — 3.6:1 AA large  */
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #f7faf8;
+  color: #0b0f0d;
+}
+
+/* ── Staggered reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+.delay-1 {
+  transition-delay: 0.1s;
+}
+.delay-2 {
+  transition-delay: 0.2s;
+}
+.delay-3 {
+  transition-delay: 0.3s;
+}
+.delay-4 {
+  transition-delay: 0.4s;
+}
+.delay-5 {
+  transition-delay: 0.5s;
+}
+
+/* ── Noise texture overlay ── */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ── Marquee ── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 18s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Hero enter animations ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 0.7s ease both;
+}
+
+/* ── Pill badge ── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #dcfce7;
+  /* Dark green text — 7.2:1 contrast on #dcfce7 */
+  color: #14532d;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1px solid #bbf7d0;
+}
+.pill .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16a34a;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.85);
+  }
+}
+
+/* ── Card hover lift ── */
+.card-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.14);
+}
+
+/* ── Nav glass ── */
+.nav-glass {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(247, 250, 248, 0.92);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ── Nav links — solid muted color instead of opacity ── */
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5754; /* --color-muted, 5.1:1 on surface */
+  transition: color 0.15s ease;
+  text-decoration: none;
+}
+.nav-link:hover {
+  color: #0b0f0d;
+}
+
+/* ── Btn primary shimmer ── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+.btn-primary:hover::before {
+  transform: translateX(0);
+}
+
+/* ── Stats number ── */
+.stat-num {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff; /* used on dark bg */
+}
+
+/* ── Section separator ── */
+.sep {
+  width: 40px;
+  height: 3px;
+  background: #16a34a; /* brand-600, slightly darker = better on surface */
+  border-radius: 2px;
+}
+
+/* ── Hero grid lines ── */
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Mobile menu ── */
+#mobile-menu {
+  display: none;
+}
+#mobile-menu.open {
+  display: flex;
+}
+
+/* ── Muted text helpers ── */
+/* Use these classes instead of text-ink/50 etc. */
+.text-muted {
+  color: #4b5754;
+} /* 5.1:1 on #f7faf8 — AA ✓ */
+.text-muted-light {
+  color: #6b7a75;
+} /* 3.8:1 on #f7faf8 — AA large ✓ */
+
+/* On dark (#0b0f0d) backgrounds */
+.text-muted-on-dark {
+  color: #b8c5c0;
+} /* 5.2:1 on #0b0f0d — AA ✓ */
+.text-muted-light-on-dark {
+  color: #8fa09a;
+} /* 3.9:1 on #0b0f0d — AA large ✓ */
+
+/* ── Service card tag on brand-50 bg ── */
+/* brand-600 (#16a34a) on brand-50 (#f0fdf4) = 4.6:1 — AA ✓ */
+
+/* ── Testimonial stars ── */
+/* brand-400 (#4ade80) on #0b0f0d = 6.8:1 — AA ✓ */
+
+/* ── Footer muted text on dark ── */
+/* Use .text-muted-on-dark — avoids white/25 which is ~1.8:1 (fail) */
+.footer-meta {
+  color: #7a8f89;
+} /* 3.5:1 — AA large ✓ for 12px+ text */

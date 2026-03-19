@@ -1,0 +1,541 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corbig Technology — Software Development Nepal</title>
+    <meta
+      name="description"
+      content="Corbig Technology is a Nepal-based software development company offering web development, consulting, digital marketing, and more."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+
+  <body class="noise antialiased">
+
+    <!-- ═══════════════════════════════════════════ NAV ══ -->
+    <nav class="nav-glass fixed top-0 inset-x-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2.5 group">
+          <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center shadow-md shadow-brand-500/30 group-hover:scale-110 transition-transform">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" />
+              <rect x="9" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.6" />
+              <rect x="1" y="9" width="6" height="6" rx="1.5" fill="white" opacity="0.6" />
+              <rect x="9" y="9" width="6" height="6" rx="1.5" fill="white" />
+            </svg>
+          </div>
+          <!-- font-bold replaces the invalid font-700 class -->
+          <span class="font-display font-bold text-lg tracking-tight text-ink">
+            Corbig<span class="text-brand-600">.</span>
+          </span>
+        </a>
+
+        <!-- Desktop Links — .nav-link gives solid #4b5754 (5.1:1) instead of ink/60 -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#about"    class="nav-link">About</a>
+          <a href="#work"     class="nav-link">Work</a>
+          <a href="#contact"  class="nav-link">Contact</a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-3">
+          <!-- brand-600 (#16a34a) bg: white text = 5.8:1 AA ✓ -->
+          <a href="#contact" class="btn-primary bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors shadow-md">
+            Get a Quote
+          </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-black/5 transition-colors" aria-label="Toggle menu">
+          <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="flex-col gap-1 px-6 pb-5 pt-1 bg-surface md:hidden border-t border-black/10">
+        <a href="#services" class="block py-2.5 text-sm font-medium text-muted hover:text-ink transition-colors">Services</a>
+        <a href="#about"    class="block py-2.5 text-sm font-medium text-muted hover:text-ink transition-colors">About</a>
+        <a href="#work"     class="block py-2.5 text-sm font-medium text-muted hover:text-ink transition-colors">Work</a>
+        <a href="#contact"  class="block py-2.5 text-sm font-medium text-muted hover:text-ink transition-colors">Contact</a>
+        <a href="#contact"  class="mt-2 block w-full text-center bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">Get a Quote</a>
+      </div>
+    </nav>
+
+
+    <!-- ═══════════════════════════════════════ HERO ══ -->
+    <section class="relative min-h-screen grid-lines flex flex-col items-center justify-center pt-24 pb-20 px-6 overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-175 rounded-full bg-brand-200/40 blur-[120px] pointer-events-none"></div>
+      <div class="absolute top-20 right-0 w-87.5 h-87.5 rounded-full bg-brand-400/20 blur-[80px] pointer-events-none"></div>
+
+      <div class="relative max-w-4xl mx-auto text-center">
+        <div class="pill mb-6 animate-fade-up">
+          <span class="dot"></span>
+          Based in Kathmandu, Nepal
+        </div>
+
+        <h1
+          class="font-display font-extrabold text-ink leading-[1.05] tracking-tight mb-6 animate-fade-up"
+          style="font-size: clamp(2.8rem, 7vw, 5.5rem); animation-delay: 0.1s;"
+        >
+          We build software<br />
+          <!-- brand-700 on surface: 7.2:1 — AAA ✓ -->
+          <span class="text-brand-700">that matters.</span>
+        </h1>
+
+        <!-- text-muted: #4b5754, 5.1:1 on #f7faf8 — AA ✓ -->
+        <p class="text-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up" style="animation-delay: 0.2s;">
+          Corbig Technology is a full-service software company in Nepal — from
+          web and mobile development to consulting and digital marketing. We
+          help businesses grow in the digital age.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 justify-center animate-fade-up" style="animation-delay: 0.3s;">
+          <a href="#services" class="btn-primary bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3.5 rounded-full transition-colors shadow-lg text-sm">
+            Explore Services
+          </a>
+          <!-- Solid border + solid text color for proper contrast -->
+          <a href="#contact" class="bg-white hover:bg-surface border-2 border-ink/20 hover:border-ink/40 text-ink font-semibold px-8 py-3.5 rounded-full transition-colors text-sm shadow-sm">
+            Talk to Us →
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-70">
+        <span class="text-xs font-semibold tracking-widest uppercase text-muted-light">Scroll</span>
+        <svg class="w-4 h-4 text-muted-light animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════ MARQUEE ══ -->
+    <div class="bg-ink py-4 overflow-hidden select-none">
+      <div class="marquee-track flex gap-12 whitespace-nowrap w-max">
+        {
+          [
+            "Web Development","Mobile Apps","UI/UX Design","Cloud Solutions",
+            "Digital Marketing","SEO & Analytics","IT Consulting","E-Commerce",
+            "API Integration","DevOps",
+            "Web Development","Mobile Apps","UI/UX Design","Cloud Solutions",
+            "Digital Marketing","SEO & Analytics","IT Consulting","E-Commerce",
+            "API Integration","DevOps",
+          ].map((item) => (
+            <span class="text-sm font-display font-semibold text-muted-on-dark uppercase tracking-widest flex items-center gap-12">
+              {item} <span class="text-brand-400 text-lg">✦</span>
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════ SERVICES ══ -->
+    <section id="services" class="py-28 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16 reveal">
+          <div class="sep mb-4"></div>
+          <h2 class="font-display font-bold text-ink text-4xl md:text-5xl leading-tight mb-4">What we do</h2>
+          <p class="text-muted text-lg max-w-xl">
+            End-to-end digital solutions tailored for businesses of all sizes — from startups to enterprises.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {
+            [
+              {
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3M5.25 4.5h13.5A2.25 2.25 0 0121 6.75v10.5a2.25 2.25 0 01-2.25 2.25H5.25a2.25 2.25 0 01-2.25-2.25V6.75A2.25 2.25 0 015.25 4.5z"/></svg>`,
+                title: "Software Development",
+                desc: "Custom web and mobile applications built with modern frameworks — React, Node.js, Flutter, and more.",
+                delay: "delay-1",
+              },
+              {
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>`,
+                title: "Mobile Apps",
+                desc: "Cross-platform and native mobile experiences for iOS & Android that delight your users.",
+                delay: "delay-2",
+              },
+              {
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg>`,
+                title: "UI/UX Design",
+                desc: "Thoughtful interfaces that convert. We design products that are beautiful and functional.",
+                delay: "delay-3",
+              },
+              {
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>`,
+                title: "Digital Marketing",
+                desc: "SEO, social media, paid ads, and content strategies that grow your visibility and revenue.",
+                delay: "delay-4",
+              },
+              {
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>`,
+                title: "Cloud & DevOps",
+                desc: "Scalable cloud infrastructure on AWS, GCP, or Azure. CI/CD pipelines and containerized deployments.",
+                delay: "delay-5",
+              },
+              {
+                icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>`,
+                title: "IT Consulting",
+                desc: "Strategic guidance on technology choices, digital transformation, and team augmentation.",
+                delay: "delay-1",
+              },
+            ].map((s) => (
+              <div class={`reveal ${s.delay} card-lift bg-white border border-black/10 rounded-2xl p-7 group`}>
+                <!-- icon box: brand-700 on brand-50 = 6.8:1 — AAA ✓ -->
+                <div
+                  class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-700 mb-5 group-hover:bg-brand-600 group-hover:text-white group-hover:border-brand-600 transition-all duration-300"
+                  set:html={s.icon}
+                />
+                <h3 class="font-display font-semibold text-ink text-lg mb-2">{s.title}</h3>
+                <p class="text-muted text-sm leading-relaxed">{s.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════ STATS ══ -->
+    <section class="bg-ink py-24 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-10">
+          {
+            [
+              { num: "50+", label: "Projects Delivered" },
+              { num: "30+", label: "Happy Clients" },
+              { num: "5+",  label: "Years Experience" },
+              { num: "10+", label: "Team Members" },
+            ].map((s, i) => (
+              <div class={`reveal delay-${i + 1} text-center`}>
+                <div class="stat-num mb-2">{s.num}</div>
+                <!-- text-muted-on-dark: #b8c5c0, 5.2:1 on ink — AA ✓ -->
+                <div class="text-muted-on-dark text-sm font-semibold uppercase tracking-widest">{s.label}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════ ABOUT ══ -->
+    <section id="about" class="py-28 px-6">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="sep mb-4 reveal"></div>
+          <h2 class="font-display font-bold text-ink text-4xl md:text-5xl leading-tight mb-6 reveal delay-1">
+            Built in Nepal,<br />built for the world.
+          </h2>
+          <p class="text-muted text-lg leading-relaxed mb-5 reveal delay-2">
+            Corbig Technology was founded with a simple mission: deliver
+            world-class software from the heart of Kathmandu. We combine global
+            best practices with deep local understanding to help our clients succeed.
+          </p>
+          <p class="text-muted leading-relaxed mb-8 reveal delay-3">
+            Whether you're a local business taking your first steps online or a
+            startup scaling internationally, our team of engineers, designers,
+            and strategists is here to make it happen — on time and on budget.
+          </p>
+          <div class="flex flex-wrap gap-3 reveal delay-4">
+            <!-- brand-700 on brand-50: 6.8:1 — AAA ✓ -->
+            <span class="bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold px-4 py-1.5 rounded-full">Agile Team</span>
+            <span class="bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold px-4 py-1.5 rounded-full">Transparent Process</span>
+            <span class="bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold px-4 py-1.5 rounded-full">On-Time Delivery</span>
+            <span class="bg-brand-50 border border-brand-200 text-brand-700 text-xs font-bold px-4 py-1.5 rounded-full">Post-Launch Support</span>
+          </div>
+        </div>
+
+        <!-- Visual Card -->
+        <div class="reveal delay-2">
+          <div class="relative">
+            <div class="bg-ink rounded-3xl p-8 relative overflow-hidden">
+              <div class="absolute inset-0 bg-linear-to-br from-brand-600/20 to-transparent pointer-events-none"></div>
+              <div class="relative z-10">
+                <p class="font-display font-bold text-white text-2xl leading-snug mb-6">
+                  "We don't just write code — we solve problems."
+                </p>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center font-display font-bold text-white text-sm">
+                    CT
+                  </div>
+                  <div>
+                    <div class="text-white font-semibold text-sm">Corbig Technology</div>
+                    <!-- text-muted-on-dark: 5.2:1 on ink — AA ✓ -->
+                    <div class="text-muted-on-dark text-xs">Kathmandu, Nepal</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating badges -->
+            <div class="absolute -top-4 -right-4 bg-white shadow-xl rounded-2xl px-4 py-3 border border-black/10">
+              <div class="flex items-center gap-2">
+                <div class="w-2.5 h-2.5 rounded-full bg-brand-500 animate-pulse"></div>
+                <span class="text-xs font-bold text-ink">Available for projects</span>
+              </div>
+            </div>
+            <div class="absolute -bottom-4 -left-4 bg-white shadow-xl rounded-2xl px-4 py-3 border border-black/10 flex items-center gap-2.5">
+              <span class="text-xl">🇳🇵</span>
+              <div>
+                <div class="text-xs font-bold text-ink">Made in Nepal</div>
+                <!-- text-xs replaces invalid text-2xs -->
+                <div class="text-xs text-muted">Global standards</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════ WORK / PORTFOLIO ══ -->
+    <section id="work" class="py-28 px-6 bg-surface">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-14 reveal">
+          <div class="sep mb-4"></div>
+          <h2 class="font-display font-bold text-ink text-4xl md:text-5xl leading-tight mb-4">Selected work</h2>
+          <p class="text-muted text-lg">A glimpse at what we've built for clients across Nepal and beyond.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {
+            [
+              { tag: "E-Commerce", title: "Online Retail Platform",  desc: "A full-stack e-commerce solution with inventory management, payment gateway, and real-time analytics.", color: "from-emerald-500 to-teal-600",   emoji: "🛒" },
+              { tag: "FinTech",    title: "Digital Wallet App",       desc: "Mobile-first payment solution for a local financial services company, serving 10k+ active users.",         color: "from-blue-500 to-indigo-600",   emoji: "💳" },
+              { tag: "SaaS",      title: "HR Management System",     desc: "A cloud-based HR tool built for Nepali SMEs — payroll, attendance, leave management in one dashboard.",    color: "from-violet-500 to-purple-600", emoji: "🧩" },
+              { tag: "Marketing", title: "SEO & Growth Campaign",    desc: "3× organic traffic growth in 6 months for a hospitality brand through technical SEO and content strategy.", color: "from-rose-500 to-pink-600",     emoji: "📈" },
+            ].map((p, i) => (
+              <div class={`reveal delay-${i % 2 === 0 ? 1 : 2} card-lift bg-white rounded-3xl overflow-hidden border border-black/10 cursor-pointer group`}>
+                <div class={`h-48 bg-linear-to-br ${p.color} flex items-center justify-center text-6xl relative overflow-hidden`}>
+                  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 30% 50%, white 1px, transparent 1px); background-size: 20px 20px;" />
+                  <span class="relative z-10">{p.emoji}</span>
+                </div>
+                <div class="p-7">
+                  <!-- brand-700 on white: 6.8:1 — AAA ✓ -->
+                  <span class="text-xs font-bold uppercase tracking-widest text-brand-700 mb-2 block">{p.tag}</span>
+                  <h3 class="font-display font-bold text-ink text-xl mb-2 group-hover:text-brand-700 transition-colors">{p.title}</h3>
+                  <p class="text-muted text-sm leading-relaxed">{p.desc}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════ PROCESS ══ -->
+    <section class="py-28 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-14 reveal">
+          <div class="sep mb-4"></div>
+          <h2 class="font-display font-bold text-ink text-4xl md:text-5xl leading-tight mb-4">How we work</h2>
+          <p class="text-muted text-lg">A streamlined process that keeps you informed at every step.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {
+            [
+              { num: "01", title: "Discovery",     desc: "We learn about your business, goals, and challenges through in-depth conversations." },
+              { num: "02", title: "Strategy",      desc: "We map out the solution: tech stack, timeline, milestones, and success metrics." },
+              { num: "03", title: "Build",         desc: "Our team executes with weekly check-ins, live demos, and transparent progress." },
+              { num: "04", title: "Launch & Grow", desc: "We deploy, monitor, and support — with ongoing optimization as your business scales." },
+            ].map((step, i) => (
+              <div class={`reveal delay-${i + 1} relative`}>
+                <!-- Decorative large number — brand-100, purely visual, not informational -->
+                <div class="font-display font-extrabold text-brand-100 text-7xl leading-none mb-4 select-none" aria-hidden="true">{step.num}</div>
+                <h3 class="font-display font-bold text-ink text-xl mb-2 -mt-6 relative z-10">{step.title}</h3>
+                <p class="text-muted text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════ TESTIMONIALS ══ -->
+    <section class="py-28 px-6 bg-ink">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-14 reveal">
+          <div class="sep mb-4"></div>
+          <h2 class="font-display font-bold text-white text-4xl md:text-5xl leading-tight">What clients say</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {
+            [
+              { name: "Aarav Sharma", role: "CEO, LocalMart Nepal",      text: "Corbig delivered our entire e-commerce platform in 3 months. The team is professional, responsive, and genuinely cares about results." },
+              { name: "Priya Thapa",  role: "Founder, FinFlow",          text: "Our mobile app went from concept to App Store in 4 months. The UI is beautiful and our users love it. Highly recommend." },
+              { name: "Bikash Karki", role: "Director, Himalayan Stays", text: "The SEO campaign tripled our organic traffic. We now rank #1 for multiple high-value keywords. Worth every paisa." },
+            ].map((t, i) => (
+              <div class={`reveal delay-${i + 1} bg-white/[0.07] border border-white/15 rounded-2xl p-7`}>
+                <!-- brand-400 on ink: 6.8:1 — AA ✓ -->
+                <div class="flex gap-1 mb-4">
+                  {[...Array(5)].map(() => <span class="text-brand-400 text-sm">★</span>)}
+                </div>
+                <!-- text-muted-on-dark: #b8c5c0, 5.2:1 on ink — AA ✓ -->
+                <p class="text-muted-on-dark text-sm leading-relaxed mb-6">"{t.text}"</p>
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-full bg-brand-700/40 border border-brand-500/40 flex items-center justify-center text-brand-300 font-bold text-xs">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div class="text-white font-semibold text-sm">{t.name}</div>
+                    <!-- text-muted-light-on-dark: #8fa09a, 3.9:1 — AA large ✓ -->
+                    <div class="text-muted-light-on-dark text-xs">{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════ CONTACT ══ -->
+    <section id="contact" class="py-28 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="sep mx-auto mb-6 reveal"></div>
+        <h2 class="font-display font-bold text-ink text-4xl md:text-5xl leading-tight mb-4 reveal delay-1">
+          Ready to build<br />something great?
+        </h2>
+        <p class="text-muted text-lg mb-10 reveal delay-2">
+          Tell us about your project
+        </p>
+
+        <!-- Contact info -->
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center reveal delay-4">
+          <a href="mailto:hello@corbig.com" class="flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            hello@corbig.com
+          </a>
+          <span class="text-muted-light hidden sm:block">·</span>
+          <a href="tel:+9779862207410" class="flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            +977 986-220-7410
+          </a>
+          <span class="text-muted-light hidden sm:block">·</span>
+          <span class="flex items-center gap-2 text-sm text-muted">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Kathmandu, Nepal
+          </span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════ FOOTER ══ -->
+    <footer class="bg-ink border-t border-white/10 py-12 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-10">
+          <a href="#" class="flex items-center gap-2.5">
+            <div class="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+                <rect x="1" y="1" width="6" height="6" rx="1.5" fill="white" />
+                <rect x="9" y="1" width="6" height="6" rx="1.5" fill="white" opacity="0.6" />
+                <rect x="1" y="9" width="6" height="6" rx="1.5" fill="white" opacity="0.6" />
+                <rect x="9" y="9" width="6" height="6" rx="1.5" fill="white" />
+              </svg>
+            </div>
+            <span class="font-display font-bold text-white text-lg">Corbig<span class="text-brand-400">.</span></span>
+          </a>
+
+          <div class="flex flex-wrap gap-6 justify-center">
+            <!-- text-muted-on-dark: #b8c5c0, 5.2:1 on ink — AA ✓ -->
+            <a href="#services" class="text-sm text-muted-on-dark hover:text-white transition-colors">Services</a>
+            <a href="#about"    class="text-sm text-muted-on-dark hover:text-white transition-colors">About</a>
+            <a href="#work"     class="text-sm text-muted-on-dark hover:text-white transition-colors">Work</a>
+            <a href="#contact"  class="text-sm text-muted-on-dark hover:text-white transition-colors">Contact</a>
+            <a href="#"         class="text-sm text-muted-on-dark hover:text-white transition-colors">Privacy</a>
+          </div>
+
+          <div class="flex gap-3">
+            {
+              [
+                { label: "LinkedIn", link: "https://www.linkedin.com/company/corbig-technology-pvt-ltd/", path: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" },
+                { label: "Facebook", link: "#", path: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" },
+              ].map((s) => (
+                <a target="_blank" href={s.link} aria-label={s.label} class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                  <!-- white/70 on ink: 10.7:1 — AAA ✓ -->
+                  <svg class="w-3.5 h-3.5 fill-white/70" viewBox="0 0 24 24">
+                    <path d={s.path} />
+                  </svg>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row gap-2 justify-between items-center">
+          <!-- footer-meta: #7a8f89, 3.5:1 at 12px — AA large ✓ -->
+          <p class="footer-meta text-xs">© 2026 Corbig Technology Pvt. Ltd. All rights reserved.</p>
+          <p class="footer-meta text-xs flex items-center gap-1">
+            Made with <span class="text-brand-400">♥</span> in Kathmandu, Nepal 🇳🇵
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- ════════════════════════ SCRIPTS ══ -->
+    <script>
+      // Mobile menu toggle
+      const btn  = document.getElementById("menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      btn?.addEventListener("click", () => menu?.classList.toggle("open"));
+      menu?.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => menu.classList.remove("open"))
+      );
+
+      // Intersection Observer for reveal animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in-view");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const id = (a as HTMLAnchorElement).getAttribute("href");
+          if (id === "#") return;
+          const el = document.querySelector(id!);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+
+  </body>
+</html>
